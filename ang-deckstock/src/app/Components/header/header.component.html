@@ -1,0 +1,71 @@
+<header>
+  <div class="container text-white">
+    <nav class="navbar flex-column flex-sm-row justify-content-sm-between">
+      <!--logo-->
+      <a
+        id="logo"
+        class="navbar-brand text-center col-12 col-sm-3 text-sm-left"
+        href="#"
+        >Deck<span>Stock</span></a
+      >
+      <!--liens-->
+      <div id="bloc-icon" class="col-12 col-sm-5">
+        <ul class="nav justify-content-center justify-content-md-end">
+          <!--wishlist icone-->
+          <li id="wishList-icon">
+            <i id="wishList" class="fas fa-heart" role="button"
+              ><span id="Wishcount">0</span></i
+            >
+          </li>
+          <!--Acces Profil-->
+          <li id="user-icon">
+            <i class="fas fa-user mx-5" routerLink="/profil"> </i>
+          </li>
+          <!--Info-->
+          <li id="question-icon">
+            <i
+              class="far fa-question-circle"
+              role="button"
+              (click)="open(mymodal)"
+            ></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">DeckStock</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      Il n'est jamais trop tard pour mettre la main sur les anciennes
+      collection!<br />
+      Sur Deckstock vos skateshops préféré laisse une chance au planches invendu
+      n'ayant pas encore trouver preneur.<br />
+      de plus, nous négocions pour vous les meilleurs prix avec nos boutiques
+      partenaires.
+    </p>
+    <hr />
+    <p>Vous possedez une boutique et souhaitez nous rejoindre ?</p>
+    <button class="btn btn-light">Contacter nous</button>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Ok
+    </button>
+  </div>
+</ng-template>

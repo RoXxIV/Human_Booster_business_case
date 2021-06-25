@@ -1,0 +1,59 @@
+header {
+  background: var(--bleu);
+  font-size: 30px;
+
+  #logo {
+    font-size: 40px;
+  }
+
+  #logo:hover {
+    color: inherit;
+  }
+
+  #logo span {
+    color: var(--rouge);
+  }
+
+  /*-WISHLIST-*/
+  #wishList {
+    position: relative;
+
+    span {
+      /*compteur*/
+      background-color: var(--rouge);
+      font-size: 15px;
+      padding: 2px 6px;
+      border-radius: 50%;
+      left: 25px;
+      top: -5px;
+      position: absolute;
+    }
+  }
+
+  #user-icon {
+    color: var(--white);
+  }
+}
+
+/*Modal*/
+.modal-body {
+  font-size: 15px;
+  background: var(--bleu);
+  padding: 10px;
+  color: white;
+  letter-spacing: 2px;
+  box-shadow: 0px 10px 20px var(--bleu);
+
+  button {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  hr {
+    background-color: var(--blanc);
+  }
+}
+
+i {
+  cursor: pointer;
+}

@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/*-_-_-_-_-_-_-_-_-_-_POLICES-_-_-_-_-_-_-_-_-_-_*/
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/*-_-_-_-_-_-_-_-_-_-_VARIABLES-_-_-_-_-_-_-_-_-_-_*/
+:root {
+  --rouge: #8c0b0a;
+  --bleu: #1b272c;
+  --blanc: #ebebeb;
+  --gris: #f1f5f7;
+}
+
+/*-_-_-_-_-_-_-_-_-_-_GLOBAL-_-_-_-_-_-_-_-_-_-_*/
+* {
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  transition: all .2s ease 0s;
+  /* Visualisation des éléments */
+  /*border: 1px dotted rgba(0,0,0,0.3);*/
+}
+
+*:hover {
+  transition: all .2s ease 0s;
+}
+
+html {
+  //font-size: 62.5%;
+
+  body {
+    margin: 0;
+    padding: 0;
+    //font-size: 1.6rem;
+    //line-height: 1.6;
+    color: var(--bleu);
+
+      a,
+      a:hover,
+      a:visited,
+      a:active {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      #logo,
+      select,
+      #annonces,
+      #description button,
+      footer,
+      #article span,
+      #article #prix,
+      #article text,
+      #article h2 {
+        font-family: "Bebas Neue", cursive;
+      }
+  }
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';

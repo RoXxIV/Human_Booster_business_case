@@ -1,0 +1,40 @@
+<section class="mt-5">
+  <h1>Ajouter une Collection</h1>
+  <form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
+    <div class="md-form form-group">
+      <input
+        mdbInput
+        type="text"
+        class="form-control"
+        formControlName="name"
+        id="formName"
+        placeholder="Saisissez un modele"
+      />
+      <label for="formName" style="font-size: 16px">Modele</label>
+    </div>
+    <div formGroupName="brand">
+      <label for="brandid" class="mr-4">Marque</label>
+      <select
+        formControlName="id"
+        id="brandid"
+        class="browser-default custom-select"
+      >
+        <option [value]="b.id" *ngFor="let b of brands">
+          {{ b.name }}
+        </option>
+      </select>
+    </div>
+    <!--Gestion des erreurs-->
+    <ul *ngIf="submitted">
+      <li *ngIf="modelForm.controls['name']?.errors?.required">
+        Le champs Modele est vide ou incorrect
+      </li>
+    </ul>
+    <button type="submit" class="btn btn-success my-3" mdbWavesEffect>
+      Ajouter
+    </button>
+  </form>
+  <button routerLink="/models" class="btn btn-dark" mdbWavesEffect>
+    Retour
+  </button>
+</section>

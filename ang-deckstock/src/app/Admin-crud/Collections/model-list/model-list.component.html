@@ -1,0 +1,40 @@
+<section class="row">
+  <div class="col-12 col-md-9 mx-auto">
+    <h1 class="mt-5 text-center">Gestion des Modeles</h1>
+    <button routerLink="/add-model" class="btn btn-success" mdbWavesEffec>
+      Ajouter
+    </button>
+    <table class="table table table-striped my-3 text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Modeles</th>
+          <th>Marque</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr app-model *ngFor="let model of modelList">
+          <td>{{ model?.id }}</td>
+          <td>{{ model?.name }}</td>
+          <td>{{ model?.brand["name"] }}</td>
+          <td class="d-flex justify-content-around">
+            <button
+              routerLink="/edit-model/{{ model.id }}"
+              class="btn btn-info"
+            >
+              Editer
+            </button>
+            <button (click)="deleteModel(model.id)" class="btn btn-danger">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button routerLink="/admin" class="btn btn-dark" mdbWavesEffect>
+      Retour
+    </button>
+  </div>
+</section>

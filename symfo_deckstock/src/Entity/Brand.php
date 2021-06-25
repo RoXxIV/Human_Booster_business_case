@@ -2,17 +2,18 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-use App\Repository\BrandRepository;
-use Doctrine\Common\Collections\Collection;
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\BrandRepository;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
  * normalizationContext={"groups"={"brand:read"}},
- * denormalizationContext={"groups"={"brand:write"}})
+ * denormalizationContext={"groups"={"brand:write"}}
+ * )
  * @ORM\Entity(repositoryClass=BrandRepository::class)
  */
 class Brand
