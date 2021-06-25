@@ -1,0 +1,23 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+sign_in:
+    path: /sign_in
+    controller: App\Controller\AuthenticationController::register
+    methods: POST
+#Acces a l'API
+api:
+    path: /api
+    controller: App\Controller\AuthenticationController::api
+
+#Connecter un User
+login:
+    path: /login
+    methods: [POST]
+#recuperer le user connecté
+get_user:
+    path: api/user
+    controller: App\Controller\AuthenticationController::getCompleteUser
+    methods: [GET]

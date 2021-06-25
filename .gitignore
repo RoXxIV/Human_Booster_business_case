@@ -1,0 +1,65 @@
+###> BACK SYMFONY
+###> symfony/framework-bundle ###
+/symfo_deckstock/.env
+/symfo_deckstock/.env.local
+/symfo_deckstock/.env.local.php
+/symfo_deckstock/.env.*.local
+/symfo_deckstock/config/secrets/prod/prod.decrypt.private.php
+/symfo_deckstock/public/bundles/
+/symfo_deckstock/var/
+/symfo_deckstock/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+/symfo_deckstock/.phpunit
+/symfo_deckstock/.phpunit.result.cache
+/symfo_deckstock/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> FRONT ANGULAR
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/ang-deckstock/dist
+/ang-deckstock/tmp
+/ang-deckstock/out-tsc
+# Only exists if Bazel was run
+/ang-deckstock/bazel-out
+
+# dependencies
+/ang-deckstock/node_modules
+
+# profiling files
+/ang-deckstock/chrome-profiler-events*.json
+/ang-deckstock/speed-measure-plugin*.json
+
+# IDEs and editors
+/ang-deckstock/.idea
+/ang-deckstock/.project
+/ang-deckstock/.classpath
+/ang-deckstock/.c9/
+/ang-deckstock/*.launch
+/ang-deckstock/.settings/
+/ang-deckstock/*.sublime-workspace
+
+# IDE - VSCode
+/ang-deckstock/.vscode/*
+/ang-deckstock/!.vscode/settings.json
+/ang-deckstock/!.vscode/tasks.json
+/ang-deckstock/!.vscode/launch.json
+/ang-deckstock/!.vscode/extensions.json
+/ang-deckstock/.history/*
+
+# misc
+/ang-deckstock/.sass-cache
+/ang-deckstock/connect.lock
+/ang-deckstock/coverage
+/ang-deckstock/libpeerconnection.log
+/ang-deckstock/npm-debug.log
+/ang-deckstock/yarn-error.log
+/ang-deckstock/testem.log
+/ang-deckstock/typings
+
+# System Files
+/ang-deckstock/.DS_Store
+/ang-deckstock/Thumbs.db
