@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Brand } from 'src/app/Models/brand';
 
 @Injectable({
@@ -14,7 +15,18 @@ export class BrandHttpService {
   url = 'http://localhost:8000/api/brands';
 
   getAll(): Observable<Brand[]> {
-    return this.http.get<Brand[]>(this.url);
+    return this.http.get<Brand[]>(this.url)
+      .pipe(
+        catchError((err) => {
+          console.log('error caught in brand service', err.status);
+          console.error(err);
+          /*
+            Gérer l'erreur ici
+            if (err.status === 500){...}
+          */
+          return throwError(err);
+        })
+      );
   }
 
   create(brand: Brand): Observable<Brand>{
@@ -26,7 +38,18 @@ export class BrandHttpService {
   }
 
   getById(id: any): Observable<Brand> {
-    return this.http.get<Brand>(`${this.url}/${id}`);
+    return this.http.get<Brand>(`${this.url}/${id}`)
+      .pipe(
+          catchError((err) => {
+            console.log('error caught in brand service', err.status);
+            console.error(err);
+            /*
+              Gérer l'erreur ici
+              if (err.status === 500){...}
+            */
+            return throwError(err);
+          })
+        );
   }
 
   deleteOne(id: number): Observable<Brand>{
