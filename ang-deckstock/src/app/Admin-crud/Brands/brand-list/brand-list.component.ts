@@ -15,15 +15,19 @@ export class BrandListComponent implements OnInit {
 
   brandList!: Brand[];
 
-  // collapse from ng-bootstrap
-  public isCollapsed = true;
-
+  // pagination
+  currentPage = 1;
+  pageSize = 10;
+  collectionSize: number;
 
   ngOnInit(): void {
-
+    // get all brands
     this.brandHttpService.getAll()
       .pipe(first())
-      .subscribe(data => this.brandList = data['hydra:member']);
+      .subscribe(
+        data => this.brandList = data['hydra:member'],
+        item => this.collectionSize = item['hydra:totalItems']
+        );
   }
 
   deleteBrand(id: string): any {
@@ -33,5 +37,4 @@ export class BrandListComponent implements OnInit {
             .pipe(first())
             .subscribe(() => this.brandList = this.brandList.filter(x => x.id !== Number(id)));
     }
-
 }

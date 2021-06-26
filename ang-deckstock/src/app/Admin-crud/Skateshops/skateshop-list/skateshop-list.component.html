@@ -1,37 +1,41 @@
 <app-admin-nav></app-admin-nav>
 <section class="row">
   <div class="col-12 col-md-9 mx-auto">
-    <h1 class="mt-2 text-center">Gestion des marques</h1>
-    <button routerLink="/add-brand" class="btn btn-success btn-sm">
+    <h1 class="mt-2 text-center">Gestion des Boutiques</h1>
+    <button routerLink="/add-skateshop" class="btn btn-success btn-sm">
       Ajouter
     </button>
-    <!--Brands List-->
+    <!--Skateshops List-->
     <table class="table table table-striped my-3 text-center">
       <thead class="thead-dark">
         <tr>
           <th>ID</th>
-          <th>Marque</th>
+          <th>Nom</th>
+          <th>Dirigeant</th>
+          <th>Telephone</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <tr
           *ngFor="
-            let brand of brandList
+            let skateshop of skateshopList
               | slice: (currentPage - 1) * pageSize:currentPage * pageSize
           "
         >
-          <td>{{ brand.id }}</td>
-          <td>{{ brand.name }}</td>
+          <td>{{ skateshop?.id }}</td>
+          <td>{{ skateshop?.name }}</td>
+          <td>{{ skateshop.professional["email"] }}</td>
+          <td>{{ skateshop?.phone }}</td>
           <td class="d-flex justify-content-around">
             <button
-              routerLink="/edit-brand/{{ brand.id }}"
+              routerLink="/edit-skateshop/{{ skateshop.id }}"
               class="btn btn-info btn-sm"
             >
               Editer
             </button>
             <button
-              (click)="deleteBrand(brand.id)"
+              (click)="deleteSkateshop(skateshop.id)"
               class="btn btn-danger btn-sm"
             >
               Supprimer

@@ -1,9 +1,15 @@
+<app-admin-nav></app-admin-nav>
 <section class="row">
   <div class="col-12 col-md-9 mx-auto">
-    <h1 class="mt-5 text-center">Gestion des Modeles</h1>
-    <button routerLink="/add-model" class="btn btn-success" mdbWavesEffec>
+    <h1 class="mt-2 text-center">Gestion des Collections</h1>
+    <button
+      routerLink="/add-model"
+      class="btn btn-success btn-sm"
+      mdbWavesEffec
+    >
       Ajouter
     </button>
+    <!--Collection List-->
     <table class="table table table-striped my-3 text-center">
       <thead class="thead-dark">
         <tr>
@@ -14,7 +20,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr app-model *ngFor="let model of modelList">
+        <tr
+          *ngFor="
+            let model of modelList
+              | slice: (currentPage - 1) * pageSize:currentPage * pageSize
+          "
+        >
           <td>{{ model?.id }}</td>
           <td>{{ model?.name }}</td>
           <td>{{ model?.brand["name"] }}</td>
@@ -32,7 +43,18 @@
         </tr>
       </tbody>
     </table>
-
+    <!--Pagination-->
+    <div class="row">
+      <div class="col-10 col-md-6 mx-auto">
+        <ngb-pagination
+          [collectionSize]="20"
+          [pageSize]="pageSize"
+          [(page)]="currentPage"
+          size="md"
+          class="mx-auto"
+        ></ngb-pagination>
+      </div>
+    </div>
     <button routerLink="/admin" class="btn btn-dark" mdbWavesEffect>
       Retour
     </button>

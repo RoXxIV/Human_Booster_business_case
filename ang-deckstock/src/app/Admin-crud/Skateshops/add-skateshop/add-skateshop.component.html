@@ -1,0 +1,93 @@
+<app-admin-nav></app-admin-nav>
+<section class="row justify-content-center">
+  <h1 class="mb-2 text-center">Ajouter une Boutique</h1>
+  <div class="col-12 col-md-6">
+    <form [formGroup]="skateshopForm" (ngSubmit)="onSubmit()">
+      <div class="form-group md-form">
+        <label for="formName">Nom du skateshop</label>
+        <input
+          mdbInput
+          type="text"
+          class="form-control"
+          formControlName="name"
+          id="formName"
+        />
+      </div>
+      <div class="form-group md-form">
+        <label for="formStreet">Rue</label>
+        <input
+          mdbInput
+          type="text"
+          class="form-control"
+          formControlName="street"
+          id="formStreet"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formZipCode">Code Postal</label>
+        <input
+          mdbInput
+          type="text"
+          class="form-control"
+          formControlName="zipCode"
+          id="formZipCode"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formCity">Ville</label>
+        <input
+          mdbInput
+          type="text"
+          class="form-control"
+          formControlName="city"
+          id="formCity"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formPhone">Telephone</label>
+        <input
+          mdbInput
+          type="text"
+          class="form-control"
+          formControlName="phone"
+          id="formPhone"
+        />
+      </div>
+      <div formGroupName="professional">
+        <label for="userid">Professional</label>
+        <select
+          class="ml-2 browser-default custom-select"
+          formControlName="id"
+          id="userid"
+        >
+          <option [value]="user.id" *ngFor="let user of users">
+            {{ user.firstName }} {{ user.lastName }}
+          </option>
+        </select>
+      </div>
+      <!--Gestion des erreurs-->
+      <ul *ngIf="submitted">
+        <li *ngIf="skateshopForm.controls['name']?.errors?.required">
+          Le champs Nom est vide ou incorrect
+        </li>
+        <li *ngIf="skateshopForm.controls['street']?.errors?.required">
+          Le champs Rue est vide ou incorrect
+        </li>
+        <li *ngIf="skateshopForm.controls['zipCode']?.errors?.required">
+          Le champs Code Postal est vide ou incorrect
+        </li>
+        <li *ngIf="skateshopForm.controls['city']?.errors?.required">
+          Le champs Ville est vide ou incorrect
+        </li>
+        <li *ngIf="skateshopForm.controls['phone']?.errors?.required">
+          Le champs Telephone est vide ou incorrect
+        </li>
+      </ul>
+      <button type="submit" class="btn btn-success btn-sm my-2">Ajouter</button>
+    </form>
+    <button routerLink="/skateshops" class="btn btn-dark btn-sm">Retour</button>
+  </div>
+</section>

@@ -14,18 +14,25 @@ export class ModelListComponent implements OnInit {
   constructor(private modelHttpService: ModelHttpService) { }
 
   modelList!: Model[];
-  // collapse from ng-bootstrap
-  public isCollapsed = true;
+
+  // pagination
+  currentPage = 1;
+  pageSize = 10;
+  collectionSize: number;
 
   ngOnInit(): void {
+    // get all Collections
     this.modelHttpService.getAll()
       .pipe(first())
-      .subscribe(data => this.modelList = data['hydra:member']);
+      .subscribe(
+        data => this.modelList = data['hydra:member'],
+        item => this.collectionSize = item['hydra:totalItems']
+        );
   }
 
   deleteModel(id: string): any {
-        const brand = this.modelList.find(x => x.id === Number(id));
-        if (!brand) { return; }
+        const model = this.modelList.find(x => x.id === Number(id));
+        if (!model) { return; }
         this.modelHttpService.deleteOne(Number(id))
             .pipe(first())
             .subscribe(() => this.modelList = this.modelList.filter(x => x.id !== Number(id)));

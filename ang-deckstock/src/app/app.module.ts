@@ -27,6 +27,9 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { AddModelComponent } from './Admin-crud/Collections/add-model/add-model.component';
 import { ModelListComponent } from './Admin-crud/Collections/model-list/model-list.component';
+import { AdminNavComponent } from './Admin-crud/admin-nav/admin-nav.component';
+import { SkateshopListComponent } from './Admin-crud/Skateshops/skateshop-list/skateshop-list.component';
+import { AddSkateshopComponent } from './Admin-crud/Skateshops/add-skateshop/add-skateshop.component';
 
 
 @NgModule({
@@ -38,6 +41,9 @@ import { ModelListComponent } from './Admin-crud/Collections/model-list/model-li
     FooterComponent,
     AddModelComponent,
     ModelListComponent,
+    AdminNavComponent,
+    SkateshopListComponent,
+    AddSkateshopComponent,
   ],
   imports: [
     BrowserModule,

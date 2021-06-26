@@ -1,28 +1,27 @@
-<section class="mt-5">
-  <h1 class="mb-5">Ajouter une marque</h1>
-  <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
-    <div class="md-form form-group">
-      <label for="formName">Marque</label>
-      <input
-        type="text"
-        class="form-control"
-        formControlName="name"
-        id="formName"
-      />
-    </div>
-    <!--Gestion des erreurs-->
-    <ul *ngIf="submitted">
-      <li *ngIf="brandForm.controls['name']?.errors?.required">
-        <div class="alert alert-danger" role="alert">
-          Le champs Marque est vide ou incorrect
-        </div>
-      </li>
-    </ul>
-    <button type="submit" mdbWavesEffec class="my-2 btn btn-success">
-      Ajouter
-    </button>
-  </form>
-  <button routerLink="/brands" class="btn btn-dark" mdbWavesEffect>
-    Retour
-  </button>
+<app-admin-nav></app-admin-nav>
+<section class="row justify-content-center">
+  <h1 class="mb-2 text-center">Ajouter une marque</h1>
+  <div class="col-12 col-md-6">
+    <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
+      <div class="md-form form-group">
+        <label for="formName">Marque</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          id="formName"
+        />
+      </div>
+      <!--Gestion des erreurs-->
+      <ul *ngIf="submitted">
+        <li *ngIf="brandForm.controls['name']?.errors?.required">
+          <div class="alert alert-danger" role="alert">
+            Le champs Marque est vide ou incorrect
+          </div>
+        </li>
+      </ul>
+      <button type="submit" class="my-2 btn btn-success btn-sm">Ajouter</button>
+    </form>
+    <button routerLink="/brands" class="btn btn-dark btn-sm">Retour</button>
+  </div>
 </section>
