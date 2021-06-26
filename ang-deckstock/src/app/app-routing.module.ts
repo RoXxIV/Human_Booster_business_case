@@ -6,6 +6,8 @@ import { AddModelComponent } from './Admin-crud/Collections/add-model/add-model.
 import { ModelListComponent } from './Admin-crud/Collections/model-list/model-list.component';
 import { AddSkateshopComponent } from './Admin-crud/Skateshops/add-skateshop/add-skateshop.component';
 import { SkateshopListComponent } from './Admin-crud/Skateshops/skateshop-list/skateshop-list.component';
+import { AdvertListComponent } from './Admin-crud/Adverts/advert-list/advert-list.component';
+import { AddAdvertComponent } from './Admin-crud/Adverts/add-advert/add-advert.component';
 
 const routes: Routes = [
 
@@ -20,6 +22,10 @@ const routes: Routes = [
   { path: 'skateshops', component: SkateshopListComponent},
   { path: 'add-skateshop', component: AddSkateshopComponent },
   { path: 'edit-skateshop/:id', component: AddSkateshopComponent },
+
+  { path: 'adverts', component: AdvertListComponent},
+  { path: 'add-advert', component: AddAdvertComponent },
+  { path: 'edit-advert/:id', component: AddAdvertComponent },
 
 ];
 

@@ -30,6 +30,8 @@ import { ModelListComponent } from './Admin-crud/Collections/model-list/model-li
 import { AdminNavComponent } from './Admin-crud/admin-nav/admin-nav.component';
 import { SkateshopListComponent } from './Admin-crud/Skateshops/skateshop-list/skateshop-list.component';
 import { AddSkateshopComponent } from './Admin-crud/Skateshops/add-skateshop/add-skateshop.component';
+import { AdvertListComponent } from './Admin-crud/Adverts/advert-list/advert-list.component';
+import { AddAdvertComponent } from './Admin-crud/Adverts/add-advert/add-advert.component';
 
 
 @NgModule({
@@ -44,6 +46,8 @@ import { AddSkateshopComponent } from './Admin-crud/Skateshops/add-skateshop/add
     AdminNavComponent,
     SkateshopListComponent,
     AddSkateshopComponent,
+    AdvertListComponent,
+    AddAdvertComponent,
   ],
   imports: [
     BrowserModule,
