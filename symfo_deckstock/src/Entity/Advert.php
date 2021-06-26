@@ -2,18 +2,19 @@
 
 namespace App\Entity;
 
-use DateTime;
-use DateTimeImmutable;
-use Doctrine\ORM\Mapping as ORM;
-use App\Repository\AdvertRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Repository\AdvertRepository;
+use DateTime;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ApiResource(
  * attributes={"order"={"released_at":"DESC"}},
  * normalizationContext={"groups"={"advert:read"}},
- * denormalizationContext={"groups"={"advert:write"}},)
+ * denormalizationContext={"groups"={"advert:write"}},
+ * 
+ * )
  * @ORM\Entity(repositoryClass=AdvertRepository::class)
  */
 class Advert
@@ -28,7 +29,7 @@ class Advert
     private $id;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      * @Groups("advert:read")
      * @Groups("advert:write")
      */
@@ -70,6 +71,13 @@ class Advert
     private $concave;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups("advert:read")
+     * @Groups("advert:write")
+     */
+    private $picturePath;
+
+    /**
      * @ORM\Column(type="integer")
      * @Groups("advert:read")
      * @Groups("advert:write")
@@ -92,16 +100,9 @@ class Advert
      */
     private $skateshop;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups("advert:read")
-     * @Groups("advert:write")
-     */
-    private $picturePath;
-
     public function __construct()
     {
-        $this->released_at = new DateTimeImmutable(new DateTime());
+        $this->released_at = new DateTime();
     }
 
     public function getId(): ?int
@@ -109,12 +110,12 @@ class Advert
         return $this->id;
     }
 
-    public function getReleasedAt(): ?\DateTimeImmutable
+    public function getReleasedAt(): ?\DateTimeInterface
     {
         return $this->released_at;
     }
 
-    public function setReleasedAt(\DateTimeImmutable $released_at): self
+    public function setReleasedAt(\DateTimeInterface $released_at): self
     {
         $this->released_at = $released_at;
 
@@ -181,6 +182,18 @@ class Advert
         return $this;
     }
 
+    public function getPicturePath(): ?string
+    {
+        return $this->picturePath;
+    }
+
+    public function setPicturePath(string $picturePath): self
+    {
+        $this->picturePath = $picturePath;
+
+        return $this;
+    }
+
     public function getPrice(): ?int
     {
         return $this->price;
@@ -213,18 +226,6 @@ class Advert
     public function setSkateshop(?Skateshop $skateshop): self
     {
         $this->skateshop = $skateshop;
-
-        return $this;
-    }
-
-    public function getPicturePath(): ?string
-    {
-        return $this->picturePath;
-    }
-
-    public function setPicturePath(?string $picturePath): self
-    {
-        $this->picturePath = $picturePath;
 
         return $this;
     }
