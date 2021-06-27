@@ -1,0 +1,13 @@
+/*-_-_-_-_CARDS_-_-_-_*/
+#card:hover #card-brand {
+  -webkit-transform: scale(2.5);
+  -ms-transform: scale(2.5);
+  transform: scale(2.5);
+}
+
+
+#card:hover #card-img {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}

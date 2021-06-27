@@ -8,6 +8,7 @@ import { ModalDismissReasons, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng
 })
 export class HeaderComponent implements OnInit {
 
+  /* Modal from ng-bootstrap */
   constructor(private modalService: NgbModal)
   {
     this.modalOptions = {

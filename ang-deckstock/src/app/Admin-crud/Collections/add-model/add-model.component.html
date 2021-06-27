@@ -1,12 +1,13 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row justify-content-center">
   <h1 class="mb-2 text-center">Ajouter une Collection</h1>
+
   <div class="col-12 col-md-6">
     <form [formGroup]="modelForm" (ngSubmit)="onSubmit()">
       <div class="md-form form-group">
         <label for="formName" style="font-size: 16px">Collection</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="name"
@@ -26,12 +27,15 @@
           </option>
         </select>
       </div>
+
       <!--Gestion des erreurs-->
       <ul *ngIf="submitted">
         <li *ngIf="modelForm.controls['name']?.errors?.required">
           Le champs Modele est vide ou incorrect
         </li>
       </ul>
+
+      <!--Submit-->
       <button type="submit" class="btn btn-success btn-sm my-2">Ajouter</button>
     </form>
     <button routerLink="/models" class="btn btn-dark btn-sm">Retour</button>

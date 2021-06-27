@@ -1,0 +1,78 @@
+<section id="filtres" class="container-fluid">
+  <form id="filter">
+    <!--marque liste-->
+    <div class="row">
+      <div div id="blocBrand" class="col-6 col-sm-4 col-md-3 test">
+        <select
+          class="form-select"
+          #selectBrand
+          (change)="emitBrand(selectBrand.value)"
+        >
+          <option selected>Marque</option>
+          <option [value]="brand.name" *ngFor="let brand of brands">
+            {{ brand.name }}
+          </option>
+        </select>
+      </div>
+      <!--collection liste-->
+      <div id="blocCollection" class="col-6 col-sm-4 col-md-3">
+        <select
+          class="form-select"
+          #selectModel
+          (change)="emitModel(selectModel.value)"
+        >
+          <option selected>Modele</option>
+          <option [value]="model.name" *ngFor="let model of models">
+            {{ model.name }}
+          </option>
+        </select>
+      </div>
+      <!--largeur liste-->
+      <div id="blocLargeur" class="col-6 col-sm-4 col-md-3">
+        <select
+          class="form-select"
+          #selectWidth
+          (change)="emitWidth(selectWidth.value)"
+        >
+          <option selected>Largeur</option>
+          <option value="7.5">7.5</option>
+          <option value="7.6">7.6</option>
+          <option value="7.750">7.750</option>
+          <option value="8">8</option>
+          <option value="8.125">8.125</option>
+          <option value="8.250">8.250</option>
+          <option value="8.500">8.500</option>
+          <option value="9">9</option>
+          <option value="9.5">9.5</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <!--concave liste-->
+      <div id="blocConcave" class="col-6 col-sm-4 col-md-3">
+        <select class="form-select">
+          <option selected>Concave</option>
+          <option value="Leger">Leger</option>
+          <option value="Moyen">Moyen</option>
+          <option value="">Forte</option>
+        </select>
+      </div>
+      <!--shape liste-->
+      <div id="blocShape" class="col-6 col-sm-4 col-md-3">
+        <select class="form-select">
+          <option selected>Shape</option>
+          <option value="Strandard">Strandard</option>
+          <option value="Shaped">Shaped</option>
+          <option value="Full">Full</option>
+        </select>
+      </div>
+      <!--prix-->
+      <div id="blocPrix" class="col-6 col-sm-4 col-md-3">
+        <select class="form-select">
+          <option selected>Prix</option>
+          <option value="prixAsc">par ordre croissant</option>
+          <option value="prixDesc">par ordre decroissant</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</section>

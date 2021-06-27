@@ -1,6 +1,8 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row justify-content-center">
   <h1 class="mb-2 text-center">Ajouter une marque</h1>
+
   <div class="col-12 col-md-6">
     <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
       <div class="md-form form-group">
@@ -12,6 +14,7 @@
           id="formName"
         />
       </div>
+
       <!--Gestion des erreurs-->
       <ul *ngIf="submitted">
         <li *ngIf="brandForm.controls['name']?.errors?.required">
@@ -20,8 +23,11 @@
           </div>
         </li>
       </ul>
+
+      <!--Submit-->
       <button type="submit" class="my-2 btn btn-success btn-sm">Ajouter</button>
     </form>
+
     <button routerLink="/brands" class="btn btn-dark btn-sm">Retour</button>
   </div>
 </section>

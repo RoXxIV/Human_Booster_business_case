@@ -1,10 +1,14 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row">
   <div class="col-12 mx-auto">
     <h1 class="mt-2 text-center">Gestion des Annonces</h1>
+
+    <!--Add advert-->
     <button routerLink="/add-advert" class="btn btn-success btn-sm">
       Ajouter
     </button>
+
     <!--Advert List-->
     <table class="table table table-striped my-3 text-center">
       <thead class="thead-dark">
@@ -45,6 +49,7 @@
         </tr>
       </tbody>
     </table>
+
     <!--Pagination-->
     <div class="row">
       <div class="col-10 col-md-6 mx-auto">
@@ -57,6 +62,7 @@
         ></ngb-pagination>
       </div>
     </div>
+
     <button routerLink="/admin" class="btn btn-dark">Retour</button>
   </div>
 </section>

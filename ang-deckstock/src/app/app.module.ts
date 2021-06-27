@@ -32,6 +32,13 @@ import { SkateshopListComponent } from './Admin-crud/Skateshops/skateshop-list/s
 import { AddSkateshopComponent } from './Admin-crud/Skateshops/add-skateshop/add-skateshop.component';
 import { AdvertListComponent } from './Admin-crud/Adverts/advert-list/advert-list.component';
 import { AddAdvertComponent } from './Admin-crud/Adverts/add-advert/add-advert.component';
+import { AdminInterfaceComponent } from './Admin-crud/admin-interface/admin-interface.component';
+import { BackHomeComponent } from './Components/back-home/back-home.component';
+import { HomeComponent } from './Components/home/home.component';
+import { BanniereComponent } from './Components/banniere/banniere.component';
+import { ArticleCardComponent } from './Components/article-card/article-card.component';
+import { FilterComponent } from './Components/filter/filter.component';
+import { ArticleDetailsComponent } from './Components/article-details/article-details.component';
 
 
 @NgModule({
@@ -48,6 +55,13 @@ import { AddAdvertComponent } from './Admin-crud/Adverts/add-advert/add-advert.c
     AddSkateshopComponent,
     AdvertListComponent,
     AddAdvertComponent,
+    AdminInterfaceComponent,
+    BackHomeComponent,
+    HomeComponent,
+    BanniereComponent,
+    ArticleCardComponent,
+    FilterComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
     BrowserModule,

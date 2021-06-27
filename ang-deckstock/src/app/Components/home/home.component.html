@@ -1,0 +1,42 @@
+<!--Banner-->
+<app-banniere [localisation]="1"></app-banniere>
+
+<app-filter
+  (myBrand)="getSelectedBrand($event)"
+  (myModel)="getSelectedModel($event)"
+  (myWidth)="getSelectedWidth($event)"
+></app-filter>
+
+<!--Adverts------------>
+<section id="annonces" class="container mt-5 mx-auto">
+  <h2 class="mb-5 ml-4">Annonces récentes</h2>
+  <div class="row text-center">
+    <!--Loop begin-->
+    <div
+      app-article-card
+      *ngFor="
+        let a of advertListActif
+          | slice: (currentPage - 1) * pageSize:currentPage * pageSize
+      "
+      [advert]="a"
+      id="card"
+      class="col-lg-3 col-md-4 col-sm-6"
+      style="font-size: 20px"
+    ></div>
+    <!--loop end-->
+  </div>
+  <!--Pagination-->
+  <div class="row">
+    <div class="col-10 col-md-6 mx-auto">
+      <ngb-pagination
+        [collectionSize]="40"
+        [pageSize]="pageSize"
+        [(page)]="currentPage"
+        size="lg"
+        class="mx-auto"
+      ></ngb-pagination>
+    </div>
+  </div>
+</section>
+
+<hr class="my-5" />

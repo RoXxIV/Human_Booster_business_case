@@ -1,10 +1,14 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row">
   <div class="col-12 col-md-9 mx-auto">
     <h1 class="mt-2 text-center">Gestion des marques</h1>
+
+    <!--Add Brand-->
     <button routerLink="/add-brand" class="btn btn-success btn-sm">
       Ajouter
     </button>
+
     <!--Brands List-->
     <table class="table table table-striped my-3 text-center">
       <thead class="thead-dark">
@@ -40,6 +44,7 @@
         </tr>
       </tbody>
     </table>
+
     <!--Pagination-->
     <div class="row">
       <div class="col-10 col-md-6 mx-auto">
@@ -52,6 +57,7 @@
         ></ngb-pagination>
       </div>
     </div>
+
     <button routerLink="/admin" class="btn btn-dark btn-sm">Retour</button>
   </div>
 </section>

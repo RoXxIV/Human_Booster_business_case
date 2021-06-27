@@ -6,10 +6,11 @@ footer {
   padding: 150px 0px;
   font-size: 20px;
 
+    ul {
+    position: absolute;
+    left: 10%;
+    top: 70%;
+  }
+
 }
 
-footer ul {
-  position: absolute;
-  left: 10%;
-  top: 70%;
-}

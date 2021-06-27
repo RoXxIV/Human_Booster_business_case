@@ -1,12 +1,13 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row justify-content-center">
   <h1 class="mb-2 text-center">Ajouter une Boutique</h1>
+
   <div class="col-12 col-md-6">
     <form [formGroup]="skateshopForm" (ngSubmit)="onSubmit()">
       <div class="form-group md-form">
         <label for="formName">Nom du skateshop</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="name"
@@ -16,7 +17,6 @@
       <div class="form-group md-form">
         <label for="formStreet">Rue</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="street"
@@ -27,7 +27,6 @@
       <div class="form-group md-form">
         <label for="formZipCode">Code Postal</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="zipCode"
@@ -38,7 +37,6 @@
       <div class="form-group md-form">
         <label for="formCity">Ville</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="city"
@@ -49,13 +47,13 @@
       <div class="form-group md-form">
         <label for="formPhone">Telephone</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="phone"
           id="formPhone"
         />
       </div>
+
       <div formGroupName="professional">
         <label for="userid">Professional</label>
         <select
@@ -68,6 +66,7 @@
           </option>
         </select>
       </div>
+
       <!--Gestion des erreurs-->
       <ul *ngIf="submitted">
         <li *ngIf="skateshopForm.controls['name']?.errors?.required">
@@ -86,6 +85,8 @@
           Le champs Telephone est vide ou incorrect
         </li>
       </ul>
+
+      <!--Submit-->
       <button type="submit" class="btn btn-success btn-sm my-2">Ajouter</button>
     </form>
     <button routerLink="/skateshops" class="btn btn-dark btn-sm">Retour</button>

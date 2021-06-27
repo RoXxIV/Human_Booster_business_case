@@ -1,18 +1,21 @@
 <app-admin-nav></app-admin-nav>
+
 <section class="row justify-content-center">
   <h1 class="mb-2 text-center">Ajouter une annonces</h1>
+
   <div class="col-12 col-md-6">
     <form [formGroup]="advertForm" (ngSubmit)="onSubmit()">
+      <!--Description-->
       <div class="form-group md-form">
         <label for="formDescription">Description</label>
         <textarea
           class="form-control md-textarea"
-          mdbInput
           id="formDescription"
           formControlName="description"
         ></textarea>
       </div>
-      <!--width-->
+
+      <!--Width-->
       <div class="form-group">
         <label for="widthId">Largeurs</label>
         <select
@@ -25,18 +28,19 @@
           </option>
         </select>
       </div>
-      <!--length-->
+
+      <!--Length-->
       <div class="form-group md-form">
         <label for="formLength">Longueur</label>
         <input
           type="text"
-          mdbInput
           class="form-control"
           formControlName="length"
           id="formLength"
         />
       </div>
-      <!--shape-->
+
+      <!--Shape-->
       <div class="form-group">
         <label for="shapeId">Shape</label>
         <select
@@ -49,7 +53,8 @@
           </option>
         </select>
       </div>
-      <!--concave-->
+
+      <!--Concave-->
       <div class="form-group">
         <label for="concaveId">Concave</label>
         <select
@@ -62,22 +67,22 @@
           </option>
         </select>
       </div>
-      <!--photos-->
+
+      <!--Photos-->
       <div class="form-group md-form">
         <label for="formPicture">Photo</label>
         <input
-          mdbInput
           type="text"
           class="form-control"
           formControlName="picturePath"
           id="formPicture"
         />
       </div>
+
       <!--Price-->
       <div class="form-group md-form">
         <label for="formLength">Prix</label>
         <input
-          mdbInput
           type="number"
           step=".01"
           class="form-control"
@@ -85,7 +90,8 @@
           id="formLength"
         />
       </div>
-      <!--modele-->
+
+      <!--Modele-->
       <div formGroupName="model" class="form-group">
         <label for="modelId">Modele</label>
         <select
@@ -98,7 +104,8 @@
           </option>
         </select>
       </div>
-      <!--skateshop-->
+
+      <!--Skateshop-->
       <div formGroupName="skateshop" class="form-group">
         <label for="skateshoplId">Skateshop</label>
         <select
@@ -115,6 +122,7 @@
           </option>
         </select>
       </div>
+
       <!--Gestion des erreurs-->
       <ul *ngIf="submitted">
         <li *ngIf="advertForm.controls['description']?.errors?.required">
@@ -148,8 +156,11 @@
           </div>
         </li>
       </ul>
+
+      <!--Submit-->
       <button type="submit" class="btn btn-success btn-sm my-2">Ajouter</button>
     </form>
+
     <button routerLink="/adverts" class="btn btn-dark btn-sm">Retour</button>
   </div>
 </section>
