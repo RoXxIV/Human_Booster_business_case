@@ -1,0 +1,18 @@
+#loginForm {
+  background-image: url('../../../assets/img/login_form.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 140px 50px;
+}
+
+#loginForm input {
+  padding: 15px;
+}
+
+#loginForm button {
+  background-color: var(--bleu);
+  color: var(--blanc);
+  font-size: 14px;
+  /*border-color: var(--bleu);*/
+  padding: 7.5px 15px;
+}

@@ -14,6 +14,7 @@ export class UserHttpService {
   // Api-platform swagger
   url = 'http://localhost:8000/api/users';
 
+
   getAll(): Observable<User[]> {
     return this.http.get<User[]>(this.url)
       .pipe(
@@ -27,10 +28,6 @@ export class UserHttpService {
           return throwError(err);
         })
       );
-  }
-
-  create(user: User): Observable<User>{
-    return this.http.post<User>(this.url, user);
   }
 
   update(id: any, data: any): Observable<any> {

@@ -11,12 +11,13 @@ import { AddAdvertComponent } from './Admin-crud/Adverts/add-advert/add-advert.c
 import { AdminInterfaceComponent } from './Admin-crud/admin-interface/admin-interface.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ArticleDetailsComponent } from './Components/article-details/article-details.component';
+import { LoginComponent } from './Components/login/login.component';
+import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
 
 const routes: Routes = [
 
-  {path: 'home', component: HomeComponent},
 
-  { path: 'admin', component: AdminInterfaceComponent},
+  { path: 'admin', component: AdminInterfaceComponent, canActivate: [AuthAdminGuardService]},
 
   { path: 'brands', component: BrandListComponent},
   { path: 'add-brand', component: AddBrandComponent },
@@ -36,13 +37,17 @@ const routes: Routes = [
 
   { path: 'article/:id', component: ArticleDetailsComponent},
 
- // {path: '**', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
+
+   {path: 'home', component: HomeComponent},
+
+  // {path: '**', redirectTo: 'home', pathMatch: 'full'},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

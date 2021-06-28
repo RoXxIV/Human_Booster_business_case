@@ -39,7 +39,14 @@ import { BanniereComponent } from './Components/banniere/banniere.component';
 import { ArticleCardComponent } from './Components/article-card/article-card.component';
 import { FilterComponent } from './Components/filter/filter.component';
 import { ArticleDetailsComponent } from './Components/article-details/article-details.component';
+import { LoginComponent } from './Components/login/login.component';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
+import { AuthGuardService } from './Guards/auth-guard.service';
+import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
 
+export function getToken(): any {
+  return localStorage.getItem('auth-token');
+}
 
 @NgModule({
   declarations: [
@@ -62,6 +69,7 @@ import { ArticleDetailsComponent } from './Components/article-details/article-de
     ArticleCardComponent,
     FilterComponent,
     ArticleDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,8 +93,14 @@ import { ArticleDetailsComponent } from './Components/article-details/article-de
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
+    JwtModule.forRoot( {config: {
+        tokenGetter: getToken
+      }}),
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthAdminGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
