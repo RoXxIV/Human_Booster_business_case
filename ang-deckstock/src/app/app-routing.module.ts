@@ -13,6 +13,8 @@ import { HomeComponent } from './Components/home/home.component';
 import { ArticleDetailsComponent } from './Components/article-details/article-details.component';
 import { LoginComponent } from './Components/login/login.component';
 import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { AuthGuardService } from './Guards/auth-guard.service';
 
 const routes: Routes = [
 
@@ -39,9 +41,11 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
 
-   {path: 'home', component: HomeComponent},
+  {path: 'profil', component: ProfileComponent, canActivate: [AuthGuardService]},
 
-  // {path: '**', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
+
+  {path: '**', redirectTo: 'home', pathMatch: 'full'},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
 ];

@@ -12,17 +12,16 @@ export class AuthAdminGuardService implements CanActivate {
   constructor(
     public auth: AuthService,
     public router: Router,
-    private token: TokenStorageService
     ) { }
 
+   // allows access to the admin interface or redirect the user
   canActivate(): boolean {
       const user = window.sessionStorage.getItem(USER_KEY);
       const AdminCheck = JSON.parse(user);
-      if (AdminCheck.roles[0] == 'ROLES_ADMIN'){
+      if (AdminCheck.roles[0] === 'ROLES_ADMIN'){
         return true;
       }else{
           this.router.navigateByUrl('/home');
-          console.log('test',user);
           return false;
       }
 

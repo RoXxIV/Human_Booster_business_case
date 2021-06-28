@@ -13,7 +13,6 @@ export class AdvertListComponent implements OnInit {
   constructor(private advertHttpService: AdvertHttpService) { }
 
   advertList!: Advert[];
-
   // pagination
   currentPage = 1;
   pageSize = 10;

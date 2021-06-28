@@ -22,10 +22,10 @@ export class TokenStorageService {
     window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
   }
 
+  // get User credential
   public getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);
     if (user) {
-      console.log('ici', user);
       return JSON.parse(user);
     }
     return {};

@@ -1,0 +1,72 @@
+<app-banniere [localisation]="4"></app-banniere>
+<app-back-home></app-back-home>
+
+<section class="mt-3 mx-auto">
+  <div class="row justify-content-center">
+    <div id="advert" class="col-12 col-md-6">
+      <h4 class="text-center">Gérer ses annonces</h4>
+      <a href="#">Tout voir</a>
+      <ul class="d-flex mt-2 justify-content-center">
+        <li *ngFor="let advert of advertList | slice: 0:2">
+          <div class="mx-2">
+            <a href=""
+              ><img src="../../../assets/{{ advert.picturePath }}" alt=""
+            /></a>
+            <ul>
+              <li>{{ advert["model"]["brand"]["name"] }}</li>
+              <li>{{ advert["skateshop"]["name"] }}</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <h4 class="text-center">Gérer ses Boutiques</h4>
+      <a href="#">Tout voir</a>
+      <ul class="d-flex mt-2 justify-content-center">
+        <li *ngFor="let skateshop of skateshopList">
+          <div class="mx-2">
+            <a href=""><img src="../../../assets/img/boutique.png" alt="" /></a>
+            <ul>
+              <li>{{ skateshop.name }}</li>
+              <li>{{ skateshop.city }}</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mt-5">
+  <div class="row justify-content-center">
+    <div id="UserInfo" class="col-12 col-md-6 text-center">
+      <h4>Gérer son compte</h4>
+      <div>
+        <ul>
+          <li><span>Nom:</span> {{ user?.lastName }}</li>
+          <li><span>Prenom:</span> {{ user?.firstName }}</li>
+          <li><span>Email:</span> {{ user?.email }}</li>
+          <li><span>N°Siret:</span> {{ user?.siretNumber }}</li>
+          <li><span>Téléphone:</span> {{ user?.phone }}</li>
+          <li class="mt-2">
+            <button class="btn btn-info btn-sm">Editer</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="LoginInfo" class="col-12 col-md-6 text-center">
+      <h4>Informations de connexion</h4>
+      <ul>
+        <li><span>Premier accès au site</span></li>
+        <li>mardi 29 septembre 2020, 12:10 (13 jours 7 heures)</li>
+        <li><span>Dernier accès au site</span></li>
+        <li>lundi 12 octobre 2020, 19:41 (4 s)</li>
+      </ul>
+      <button class="btn btn-danger btn-sm" (click)="logout()">
+        Se deconnecter
+      </button>
+    </div>
+  </div>
+</section>

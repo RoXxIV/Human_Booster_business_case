@@ -52,6 +52,7 @@ class Skateshop
      * @ORM\Column(type="string", length=70)
      * @Groups("skateshop:read")
      * @Groups("skateshop:write")
+     * @Groups("advert:read")
      */
     private $city;
 

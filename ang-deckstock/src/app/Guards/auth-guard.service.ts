@@ -9,6 +9,8 @@ import { AuthService } from '../Services/Authentication/auth.service';
 export class AuthGuardService {
 
   constructor(public auth: AuthService, public router: Router) {}
+
+  // redirects the user if the connection failed
     canActivate(): boolean {
       if (!this.auth.isAuthenticated()) {
         this.router.navigate(['login']);
