@@ -44,6 +44,7 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './Guards/auth-guard.service';
 import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { TabsComponent } from './Components/tabs/tabs.component';
 
 export function getToken(): any {
   return localStorage.getItem('auth-token');
@@ -72,6 +73,7 @@ export function getToken(): any {
     ArticleDetailsComponent,
     LoginComponent,
     ProfileComponent,
+    TabsComponent,
   ],
   imports: [
     BrowserModule,
