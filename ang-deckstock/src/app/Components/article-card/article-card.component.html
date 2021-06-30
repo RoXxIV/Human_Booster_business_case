@@ -1,4 +1,4 @@
-<div class="mb-4">
+<div class="mb-4" *ngIf="animOnInit" [@enter]>
   <div id="card-img" class="btn-1">
     <a routerLink="/article/{{ advert.id }}">
       <img class="img-fluid" src="assets/{{ advert.picturePath }}" alt="" />

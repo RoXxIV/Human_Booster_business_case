@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { collapseAnimation, fadeInUpOnEnterAnimation, rubberBandAnimation } from 'angular-animations';
 import { Advert } from '../../Models/advert';
 import { AdvertHttpService } from '../../Services/Api/advert-http.service';
 
@@ -6,7 +7,7 @@ import { AdvertHttpService } from '../../Services/Api/advert-http.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
 
@@ -25,6 +26,8 @@ export class HomeComponent implements OnInit {
   // pagination
   currentPage = 1;
   pageSize = 8;
+
+  rubberState = false;
 
 
   ngOnInit(): void {

@@ -44,7 +44,12 @@ import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from './Guards/auth-guard.service';
 import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
 import { ProfileComponent } from './Components/profile/profile.component';
-import { TabsComponent } from './Components/tabs/tabs.component';
+import { TabsComponent } from './Components/Tabs/tabs/tabs.component';
+import { TabBodyComponent } from './Components/Tabs/tab-body/tab-body.component';
+import { TabItemComponent } from './Components/Tabs/tab-item/tab-item.component';
+import { TabLabelComponent } from './Components/Tabs/tab-label/tab-label.component';
+
+
 
 export function getToken(): any {
   return localStorage.getItem('auth-token');
@@ -74,6 +79,9 @@ export function getToken(): any {
     LoginComponent,
     ProfileComponent,
     TabsComponent,
+    TabBodyComponent,
+    TabItemComponent,
+    TabLabelComponent,
   ],
   imports: [
     BrowserModule,

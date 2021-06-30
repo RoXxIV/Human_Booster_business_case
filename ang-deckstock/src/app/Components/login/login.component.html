@@ -3,7 +3,7 @@
 
 <app-back-home></app-back-home>
 
-<section class="row my-5">
+<section class="row my-5" *ngIf="animOnInit" [@enter]>
   <div class="col-10 col-md-6 mx-auto">
     <form
       id="loginForm"

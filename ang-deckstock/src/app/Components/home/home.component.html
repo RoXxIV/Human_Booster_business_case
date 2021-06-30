@@ -12,7 +12,7 @@
 
 <!--Adverts------------>
 <section id="annonces" class="container mt-5 mx-auto">
-  <h2 class="mb-5 ml-4">Annonces récentes</h2>
+  <h2 class="mb-5 ml-4" [@rubberBand]="rubberState">Annonces récentes</h2>
   <div class="row text-center">
     <!--Loop begin-->
     <div
@@ -44,4 +44,66 @@
 
 <hr class="my-5" />
 
-<app-tabs></app-tabs>
+<app-tabs>
+  <app-tab-item>
+    <app-tab-label
+      >Qu'est ce qu'une planche de skateboard pro model ?</app-tab-label
+    >
+    <app-tab-body>
+      <p>
+        Les boards pro model sont généralement des séries limitées avec des
+        designs originaux et souvent à l'effigie de skateurs célèbres.
+        Contrairement aux planches de skateboard "No Name" les pro model
+        bénéficient de plusieurs avantages :
+      </p>
+      <ul class="ml-3">
+        <li>- Design soigné</li>
+        <li>- Leur solidité en fait un bon investissement sur le long terme</li>
+        <li>- Un meilleur pop pour la street</li>
+      </ul>
+    </app-tab-body>
+  </app-tab-item>
+  <app-tab-item>
+    <app-tab-label>Choisir la taille de son skateboard</app-tab-label>
+    <app-tab-body>
+      <p>
+        L'un des éléments importants lors de l'achat d'une planche de skateboard
+        c'est de choisir sa taille qui est exprimée en pouces. La largeur d'une
+        board varie généralement entre 8.25" et 7.5". En ce qui concerne la
+        longueur des planches elle varie en 29" et 33".
+      </p>
+      <ul class="ml-3">
+        <li>- 8.25" Balade entre potes</li>
+        <li>- 8.25" à 8" Skatepark & Bowl</li>
+        <li>- 7.5" à 8" Réservé pour la Street</li>
+      </ul>
+    </app-tab-body>
+  </app-tab-item>
+  <app-tab-item>
+    <app-tab-label>Qu'est ce que le Concave ?</app-tab-label>
+    <app-tab-body>
+      <p>
+        Sachez tout d'abord qu'il existe 3 degrés de concave qui sont fort,
+        moyen et léger. Plus le concave de votre planche sera prononcé plus elle
+        sera réactive et vous pourrez ainsi envoyer vos tricks plus rapidement.
+        Au contraire plus le concave est léger et plus le skateboard sera facile
+        à manier. Nous recommandons donc pour les débutants un concave moyen ou
+        léger afin que vous puissiez plus facilement contrôler votre skateboard
+        au départ.
+      </p>
+    </app-tab-body>
+  </app-tab-item>
+  <app-tab-item>
+    <app-tab-label>Qu'est ce que le Nose et le Tail ?</app-tab-label>
+    <app-tab-body>
+      <p>
+        Le Nose et le Tail sont deux termes à connaitre en skate. Le Nose (nez)
+        étant la partie avant relevée du skateboard et le Tail (queue) vous
+        l'aurez compris, la partie arrière elle aussi relevée. Pour reconnaitre
+        le Nose et le Tail, il vous suffit de monter sur votre planche et de
+        regarder le coté le plus relevé, c'est à dire le Nose et donc le devant
+        de votre planche de skateboard.
+      </p>
+    </app-tab-body>
+  </app-tab-item>
+</app-tabs>

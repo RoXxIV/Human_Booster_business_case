@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { fadeInUpOnEnterAnimation } from 'angular-animations';
 import { User } from '../../Models/user';
 import { AuthService } from '../../Services/Authentication/auth.service';
 import { TokenStorageService } from '../../Services/Authentication/token-storage.service';
@@ -7,7 +8,10 @@ import { TokenStorageService } from '../../Services/Authentication/token-storage
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [
+    fadeInUpOnEnterAnimation({ anchor: 'enter', duration: 1000, delay: 100, translate: '30px' }),
+  ]
 })
 export class LoginComponent implements OnInit {
 
@@ -22,6 +26,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  animOnInit: boolean;
 
   onSubmit(): void{
 
@@ -51,6 +56,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.animOnInit = true;
   }
 
 }
