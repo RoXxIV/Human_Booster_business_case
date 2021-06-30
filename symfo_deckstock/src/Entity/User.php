@@ -15,10 +15,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  * @ApiResource(
  * normalizationContext={"groups"={"user:read"}},
  * denormalizationContext={"groups"={"user:write"}},
- * collectionOperations={
-            "get",
- *          "post"={"access_control"="is_granted('ROLE_ADMIN')"}
- *     },)
+ * )
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
  */

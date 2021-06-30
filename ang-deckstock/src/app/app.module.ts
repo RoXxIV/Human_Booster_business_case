@@ -48,6 +48,8 @@ import { TabsComponent } from './Components/Tabs/tabs/tabs.component';
 import { TabBodyComponent } from './Components/Tabs/tab-body/tab-body.component';
 import { TabItemComponent } from './Components/Tabs/tab-item/tab-item.component';
 import { TabLabelComponent } from './Components/Tabs/tab-label/tab-label.component';
+import { AddUserComponent } from './Admin-crud/Users/add-user/add-user.component';
+import { UserListComponent } from './Admin-crud/Users/user-list/user-list.component';
 
 
 
@@ -82,6 +84,8 @@ export function getToken(): any {
     TabBodyComponent,
     TabItemComponent,
     TabLabelComponent,
+    AddUserComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,

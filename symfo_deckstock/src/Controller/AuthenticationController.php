@@ -23,7 +23,7 @@ class AuthenticationController extends AbstractController
 
         $user->setUsername($data['username']);
         $user->setPassword($encoder->encodePassword($user, $data['password']));
-        $user->setRoles($data['roles']);
+        $user->setRoles(['ROLES_USER']);
         $user->setEmail($data['email']);
         $user->setLastName($data['lastName']);
         $user->setFirstName($data['firstName']);

@@ -15,6 +15,8 @@ import { LoginComponent } from './Components/login/login.component';
 import { AuthAdminGuardService } from './Guards/auth-admin-guard.service';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { AuthGuardService } from './Guards/auth-guard.service';
+import { UserListComponent } from './Admin-crud/Users/user-list/user-list.component';
+import { AddUserComponent } from './Admin-crud/Users/add-user/add-user.component';
 
 const routes: Routes = [
 
@@ -36,6 +38,10 @@ const routes: Routes = [
   { path: 'adverts', component: AdvertListComponent},
   { path: 'add-advert', component: AddAdvertComponent },
   { path: 'edit-advert/:id', component: AddAdvertComponent },
+
+  { path: 'users', component: UserListComponent},
+  { path: 'add-user', component: AddUserComponent },
+  { path: 'edit-user/:id', component: AddUserComponent },
 
   { path: 'article/:id', component: ArticleDetailsComponent},
 

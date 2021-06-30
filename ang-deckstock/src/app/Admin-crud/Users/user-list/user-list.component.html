@@ -1,0 +1,65 @@
+<app-admin-nav></app-admin-nav>
+
+<section class="row">
+  <div class="col-12 col-md-10 mx-auto">
+    <h1 class="mt-2 text-center">Gestion des Utilisateurs</h1>
+
+    <!--Add User-->
+    <button routerLink="/add-user" class="btn btn-success btn-sm">
+      Ajouter
+    </button>
+
+    <!--Skateshops List-->
+    <table class="table table table-striped my-3 text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Pseudo</th>
+          <th>Nom & Prenom</th>
+          <th>Email</th>
+          <th>N°Siret</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let user of userList
+              | slice: (currentPage - 1) * pageSize:currentPage * pageSize
+          "
+        >
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.lastName }} {{ user.firstName }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.siretNumber }}</td>
+          <td class="d-flex justify-content-around">
+            <button
+              routerLink="/edit-user/{{ user.id }}"
+              class="btn btn-info btn-sm"
+            >
+              Editer
+            </button>
+            <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Pagination-->
+    <div class="row">
+      <div class="col-10 col-md-6 mx-auto">
+        <ngb-pagination
+          [collectionSize]="20"
+          [pageSize]="pageSize"
+          [(page)]="currentPage"
+          size="md"
+          class="mx-auto"
+        ></ngb-pagination>
+      </div>
+    </div>
+    <button routerLink="/admin" class="btn btn-dark btn-sm">Retour</button>
+  </div>
+</section>

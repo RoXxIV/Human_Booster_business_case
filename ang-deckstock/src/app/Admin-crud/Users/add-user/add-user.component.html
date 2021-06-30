@@ -1,0 +1,105 @@
+<app-admin-nav></app-admin-nav>
+
+<section class="row justify-content-center">
+  <h1 class="mb-2 text-center">Ajouter un professionnel</h1>
+
+  <div class="col-12 col-md-6">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="form-group md-form">
+        <label for="formUsername">Pseudo</label>
+        <input
+          class="form-control"
+          type="text"
+          id="formUsername"
+          formControlName="username"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formPassword">mot de passe</label>
+        <input
+          class="form-control"
+          type="password"
+          id="formPassword"
+          formControlName="password"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formEmail">email</label>
+        <input
+          class="form-control"
+          type="email"
+          id="formEmail"
+          formControlName="email"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formLastName">Nom</label>
+        <input
+          class="form-control"
+          type="text"
+          id="formLastName"
+          formControlName="lastName"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formFirstName">Prenom</label>
+        <input
+          class="form-control"
+          type="text"
+          id="formFirstName"
+          formControlName="firstName"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formSiretNumber">Numero de siret</label>
+        <input
+          class="form-control"
+          type="text"
+          id="formSiretNumber"
+          formControlName="siretNumber"
+        />
+      </div>
+
+      <div class="form-group md-form">
+        <label for="formPhone">Téléphone</label>
+        <input
+          class="form-control"
+          type="text"
+          id="formPhone"
+          formControlName="phone"
+        />
+      </div>
+      <!--Gestion des erreurs-->
+      <ul *ngIf="submitted">
+        <li *ngIf="userForm.controls['username']?.errors?.required">
+          Le champs username est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['password']?.errors?.required">
+          Le champs password est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['email']?.errors?.required">
+          Le champs email est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['lastName']?.errors?.required">
+          Le champs lastName est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['firstName']?.errors?.required">
+          Le champs firstName est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['siretNumber']?.errors?.required">
+          Le champs siretNumber est vide ou incorrect
+        </li>
+        <li *ngIf="userForm.controls['phone']?.errors?.required">
+          Le champs phone est vide ou incorrect
+        </li>
+      </ul>
+      <button type="submit" class="btn btn-success btn-sm my-2">Ajouter</button>
+    </form>
+    <button routerLink="/users" class="btn btn-dark btn-sm">Retour</button>
+  </div>
+</section>

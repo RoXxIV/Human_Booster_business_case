@@ -12,7 +12,7 @@ export class UserHttpService {
   constructor(private http: HttpClient) { }
 
   // Api-platform swagger
-  url = 'http://localhost:8000/api/users';
+  url = 'http://127.0.0.1:8000/api/users';
 
 
   getAll(): Observable<User[]> {
