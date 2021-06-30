@@ -1,5 +1,6 @@
 .tabsComponent{
   display: flex;
+
 }
 .tabs-body{
 
@@ -13,7 +14,9 @@
 }
 .tab-label{
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 400;
+  color: var(--bleu);
+  font-size: 20px;
 }
 .tabs-header{
   border-right: 0.5px solid var(--gris);

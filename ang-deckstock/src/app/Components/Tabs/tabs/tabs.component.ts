@@ -3,19 +3,20 @@ import { TabItemComponent } from '../tab-item/tab-item.component';
 import { Observable } from 'rxjs';
 import { delay, map, startWith } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-tabs',
   styleUrls: ['./tabs.component.scss'],
   template: `
   <div class="tabsComponent row">
-    <div class="tabs-header col-4">
+    <div class="tabs-header col-5">
       <div
         class="tab-label my-2"
         (click)="selectTab(item)"
         [class.active]="activeTab === item"
         *ngFor="let item of tabItems$ | async"
       >
-        <ng-container *ngIf="item.labelComponent">
+        <ng-container *ngIf="item.labelComponent"><sup *ngIf="activeTab === item">* </sup>
           <ng-container *ngTemplateOutlet="item.labelComponent.labelContent">
           </ng-container>
         </ng-container>
@@ -24,7 +25,7 @@ import { delay, map, startWith } from 'rxjs/operators';
         </ng-container>
       </div>
     </div>
-    <div class="tabs-body col-8">
+    <div class="tabs-body col-7">
       <ng-container *ngIf="activeTab && activeTab.bodyComponent">
         <ng-container *ngTemplateOutlet="activeTab.bodyComponent.bodyContent">
         </ng-container>
@@ -55,9 +56,6 @@ export class TabsComponent implements OnInit {
   }
 
   ngAfterContentChecked(): void {
-    // choose the default tab
-    // we need to wait for a next VM turn,
-    // because Tab item content, will not be initialized yet
     if (!this.activeTab) {
       Promise.resolve().then(() => {
         this.activeTab = this.tabs.first;
